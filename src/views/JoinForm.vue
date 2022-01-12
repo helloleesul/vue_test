@@ -71,7 +71,7 @@
         </v-card>
       </v-col>
     </v-row>
-    <modal :sheet="sheet" btn="로그인하러 가기" description="회원가입이 완료 되었습니다." v-on:goto="goto">
+    <modal :sheet="sheet2" btn="로그인하러 가기" description="회원가입이 완료 되었습니다." v-on:goto="goto">
     </modal>
   </v-form>
 </template>
@@ -91,7 +91,7 @@ import Modal from './Layout/Modal.vue';
                 address: null,
                 email: null
             },
-            sheet: false,
+            sheet2: false,
         }
     },
     methods: {
@@ -101,7 +101,7 @@ import Modal from './Layout/Modal.vue';
           const success = await this.$axios.post("/create", this.input);
           console.log(success)
           if (success.data.code === 200) {
-            this.sheet = true;
+            this.sheet2 = true;
           } 
 
         },
