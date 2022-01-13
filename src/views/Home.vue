@@ -1,5 +1,5 @@
 <template>
-  <Fragment>
+  <div>
     <ul>
       <li>message : {{message}}</li>
       <li>message.length : {{message.length >= 10 ? '10글자 이상':'10글자 미만'}}입니다.</li>
@@ -8,15 +8,14 @@
     </ul>
     <Test :text-content.prop="message" />
     <Test :scroll-top.prop="scroll" />
-  </Fragment>
+  </div>
 </template>
 
 <script>
 import Test from './Test.vue';
-import { Fragment } from 'vue-fragment'
 export default {
   name: 'Home',
-  components: {Test, Fragment},
+  components: {Test},
   data() {
     return {
       message: 'hello',
