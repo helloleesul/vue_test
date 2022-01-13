@@ -18,7 +18,7 @@
         </thead>
         <tbody>
           <tr
-            @click="$router.push(`/user/detail/${item.id}`)"
+            @click="$router.push(`/user/${item.id}`)"
             v-for="item in data"
             :key="item.id"
           >

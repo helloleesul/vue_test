@@ -22,7 +22,7 @@
       </thead>
       <tbody>
         <tr
-          @click="$router.push(`/board/detail/${item.id}`)"
+          @click="$router.push(`/board/${item.id}`)"
           v-for="item in data"
           :key="item.id"
         >

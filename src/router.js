@@ -39,7 +39,7 @@ export default new Router({
       component: () => import('./views/Board/BoardCreate.vue')
     },
     {
-      path: '/board/detail/:id',
+      path: '/board/:id',
       name: 'BoardDetail',
       component: () => import('./views/Board/BoardDetail.vue'),
     },
@@ -49,7 +49,7 @@ export default new Router({
       component: () => import('./views/User/UserList.vue'),
     },
     {
-      path: '/user/detail/:id',
+      path: '/user/:id',
       name: 'UserDetail',
       component: () => import('./views/User/UserDetail.vue'),
     },
