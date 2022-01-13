@@ -16,10 +16,7 @@ export default new Router({
     {
       path: '/login',
       name: 'Login',
-      // route level code-splitting
-      // this generates a separate chunk (about.[hash].js) for this route
-      // which is lazy-loaded when the route is visited.
-      component: () => import(/* webpackChunkName: "about" */ './views/LoginForm.vue')
+      component: () => import('./views/LoginForm.vue')
     },
     {
       path: '/join',
@@ -37,14 +34,24 @@ export default new Router({
       component: () => import('./views/Board/BoardList.vue')
     },
     {
+      path: '/board/create',
+      name: 'BoardCreate',
+      component: () => import('./views/Board/BoardCreate.vue')
+    },
+    {
+      path: '/board/detail/:id',
+      name: 'BoardDetail',
+      component: () => import('./views/Board/BoardDetail.vue'),
+    },
+    {
       path: '/user',
       name: 'User',
-      component: () => import('./views/UserList.vue'),
+      component: () => import('./views/User/UserList.vue'),
     },
     {
       path: '/user/detail/:id',
       name: 'UserDetail',
-      component: () => import('./views/UserDetail.vue'),
+      component: () => import('./views/User/UserDetail.vue'),
     },
   ]
 })

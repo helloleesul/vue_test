@@ -1,7 +1,7 @@
 <template>
 <div style="width: 50%; margin:5% auto;">
-  <BoardHeader
-  @go="$router.push('/board/new')"
+  <SmallHeader btnName="등록" :btns="true" title="BOARD LIST"
+  @go="$router.push('/board/create')"
    />
   <v-simple-table >
       <thead>
@@ -22,7 +22,7 @@
       </thead>
       <tbody>
         <tr
-        @click="aa"
+          @click="$router.push(`/board/detail/${item.id}`)"
           v-for="item in data"
           :key="item.id"
         >
@@ -36,13 +36,13 @@
 </div>
 </template>
 <script>
-import BoardHeader from './components/BoardHeader.vue';
+import SmallHeader from '../Layout/SmallHeader.vue';
   export default {
     name: 'BoardList',
-    components: {BoardHeader},
+    components: {SmallHeader},
     data () {
       return {
-        data: null
+        data: null,
       }
     },
     mounted(){
@@ -51,12 +51,10 @@ import BoardHeader from './components/BoardHeader.vue';
     methods: {
         async get(){
             const {data} = await this.$axios.get("/board");
-            console.log(data);debugger
+            console.log(data);
+            // debugger
             this.data = data.data;
         },
-        aa: function() {
-          alert();
-        }
     }
   }
 </script>
