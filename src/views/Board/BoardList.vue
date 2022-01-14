@@ -50,9 +50,13 @@ import SmallHeader from '../Layout/SmallHeader.vue';
     },
     methods: {
         async get(){
-            const {data} = await this.$axios.get("/board");
+            const {data} = await this.$axios.get("/board",{
+              Headers: {
+                Authorization: localStorage.getItem("token"),
+              }
+            });
             console.log(data);
-            // debugger
+            
             this.data = data.data;
         },
     }

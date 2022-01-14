@@ -98,10 +98,11 @@ import Modal from './Layout/Modal.vue';
         async submit(){
           this.input.serviceId = this.input.email !== "" ? this.input.email : "";
 
-          const success = await this.$axios.post("/user/create", this.input);
-          console.log(success)
-          if (success.data.code === '0000') {
+          const { data } = await this.$axios.post("/token", this.input);
+          console.log(data)
+          if (data.data.code === '0000') {
             this.sheet2 = true;
+            localStorage.setItem("token", data.data)
           } 
 
         },
