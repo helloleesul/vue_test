@@ -102,7 +102,6 @@ import Modal from './Layout/Modal.vue';
           console.log(data)
           if (data.data.code === '0000') {
             this.sheet2 = true;
-            localStorage.setItem("token", data.data)
           } 
 
         },
