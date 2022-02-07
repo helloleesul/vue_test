@@ -58,7 +58,8 @@
     methods: {
         async login(){
           console.log(this.input);
-          const { data } = await this.$axios.post("/login", this.input);
+          const { data } = await this.$axios.post("/auth/token", this.input);
+          console.log(data);
         }
     },
   }
