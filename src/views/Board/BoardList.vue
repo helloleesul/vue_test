@@ -3,7 +3,7 @@
   <SmallHeader btnName="등록" :btns="true" title="BOARD LIST"
   @go="$router.push('/board/create')"
    />
-  <v-simple-table >
+  <v-simple-table>
       <thead>
         <tr>
           <th class="text-center">

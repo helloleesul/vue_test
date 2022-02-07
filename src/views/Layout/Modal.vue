@@ -1,5 +1,5 @@
-<template>
-  <v-bottom-sheet v-model="sheet" persistent>
+<template v-if="sheet">
+  <v-bottom-sheet persistent>
     <v-sheet
       class="text-center"
       height="200px"
